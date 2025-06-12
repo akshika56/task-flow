@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Progressive Task Manager</title>
+    <meta name="description" content="A beautiful progressive web app for managing your daily tasks">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="TaskFlow">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">TaskFlow</h1>
+                <div class="header-actions">
+                    <button id="installBtn" class="install-btn hidden">Install App</button>
+                    <div class="theme-toggle">
+                        <button id="themeToggle" class="theme-btn">🌙</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Add Task Section -->
+                <section class="add-task-section">
+                    <div class="add-task-card">
+                        <h2>Add New Task</h2>
+                        <form id="taskForm" class="task-form">
+                            <div class="form-group">
+                                <input type="text" id="taskInput" placeholder="What needs to be done?" required>
+                                <button type="submit" class="add-btn">Add Task</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Tasks Section -->
+                <section class="tasks-section">
+                    <div class="tasks-header">
+                        <h2>Your Tasks</h2>
+                        <div class="task-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="pending">Pending</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+                    </div>
+                    
+                    <div id="tasksList" class="tasks-list">
+                        <!-- Tasks will be dynamically added here -->
+                    </div>
+                    
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">📝</div>
+                        <h3>No tasks yet</h3>
+                        <p>Add your first task above to get started!</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 TaskFlow - Your Progressive Task Manager</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Offline Notification -->
+    <div id="offlineNotification" class="offline-notification hidden">
+        <span>You're offline. Changes will sync when you're back online.</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
